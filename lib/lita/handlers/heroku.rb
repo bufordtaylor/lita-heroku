@@ -18,7 +18,7 @@ module Lita
         if command.start_with? "deploy"
           heroku_deploy response
         else
-          stream_command response, "#{heroku_bin} #{command} -a #{config.app_prefix}#{environment}"
+          stream_command response, "vendor/heroku-toolbelt/bin/heroku #{command} -a #{config.app_prefix}#{environment}"
         end
       end
 
