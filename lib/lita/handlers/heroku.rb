@@ -22,17 +22,17 @@ module Lita
         end
       end
 
-      def heroku_bin
-        @heroku_bin ||= if `type heroku 2>&1 | grep -v "not found"`.empty?
-          if `ls /usr/local/heroku/bin/heroku 2> /dev/null`.empty?
-            raise "Couldn't find heroku binary; please install the Heroku Toolbelt"
-          else
-            "/usr/local/heroku/bin/heroku"
-          end
-        else
-          "heroku"
-        end
-      end
+      #def heroku_bin
+        #@heroku_bin ||= if `type heroku 2>&1 | grep -v "not found"`.empty?
+          #if `ls /usr/local/heroku/bin/heroku 2> /dev/null`.empty?
+            #raise "Couldn't find heroku binary; please install the Heroku Toolbelt"
+          #else
+            #"/usr/local/heroku/bin/heroku"
+          #end
+        #else
+          #"heroku"
+        #end
+      #end
 
       def heroku_deploy(response)
         bearer = config.oauth_token
